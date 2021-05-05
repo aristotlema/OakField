@@ -3,7 +3,11 @@ import NavBar from './NavBar';
 import './App.scss';
 
 const App = () => {
-    return <NavBar />;
+    return (
+        <div className="main-container">
+            <NavBar />
+        </div>
+    )
 };
 
 export default App;

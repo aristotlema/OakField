@@ -1,7 +1,30 @@
-nav{
+nav.top-navbar {
     width: 100vw;
-    height: 3rem;
+    height: 4rem;
+    padding: 0 5rem;
+
+    background-color: #ab7a5f;
+    color: black;
     
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .main-navigation {
+        a {
+            margin: 0 5px;
+        }
+    }
+    div.session-control {
+        display: flex;
+        flex-direction: row;
+        div {
+            margin: 0 5px;
+        }
+
+    }
+
     h2.main-logo {
         font-family: 'Lobster Two', cursive;
     }
