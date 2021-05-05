@@ -23,6 +23,11 @@ img {
     height: auto;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .main-container {
     section {
         max-width: 80vw;
