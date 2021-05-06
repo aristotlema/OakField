@@ -8,7 +8,7 @@ const NavBar = () => {
             <h2 className="main-logo">
                 <Link to="/">Oak Field</Link>
             </h2>
-            <div class="main-navigation">
+            <div className="main-navigation">
                 <Link to="/">Home</Link>
                 <Link to="/products">Products</Link>
                 <Link to="/about">About</Link>

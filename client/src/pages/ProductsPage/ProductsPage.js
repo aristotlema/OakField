@@ -1,22 +1,19 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { fetchProducts } from '../../state/product/productActions';
+import React from 'react';
 
-const ProductsPage = ({ fetchProducts }) => {
-    useEffect(() => {
-        console.log('i Loaded');
-        fetchProducts();
-        // eslint-disable-next-line
-    }, []);
 
-    return <div>Welcome to Products</div>;
+import ProductList from './components/ProductList';
+
+const ProductsPage = () => {
+    return (
+        <div className="wrapper">
+            <h2 className="mtb-2">
+                Welcome to Products
+            </h2>
+            <div className="mtb-2">
+                <ProductList />
+            </div>
+        </div>
+    );
 };
 
-const mapStateToProps = state => {
-    return { products: state.products };
-};
-
-export default connect(
-    mapStateToProps,
-    { fetchProducts }
-)(ProductsPage);
+export default ProductsPage;

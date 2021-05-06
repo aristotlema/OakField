@@ -29,10 +29,13 @@ a {
 }
 
 .main-container {
-    section {
+    .wrapper {
         max-width: 80vw;
         margin-right: auto;
         margin-left:  auto;
+    }
+    .mtb-2{
+        margin: 2rem 0;
     }
     
 }
