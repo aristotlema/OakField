@@ -17,7 +17,7 @@ const NavBar = () => {
                 <a>Products</a> */}
             </div>
             <div className="session-control">
-                <div>Cart</div>
+                <Link to="/cart">Cart</Link>
                 <div>Log in</div>
             </div>
         </nav>
