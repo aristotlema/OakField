@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../../state/product/productActions';
 import './ProductList.scss';
+import Button from '../../../components/Button';
 
 const ProductList = ({ products, fetchProducts }) => {
     useEffect(() => {
@@ -18,9 +19,13 @@ const ProductList = ({ products, fetchProducts }) => {
                         <img src={imageURL} alt={name}/>
                     </div>
                     <div className="product-card-details">
-                        <h3>{name}</h3>
-                        <div>{price}</div>
-                        <div>{description}</div>
+                        <h3 className="product-cart-title">{name}</h3>
+                        <div>${price}</div>
+                        <div className="product-card-description">{description}</div>
+                        <div className="product-card-buttons">
+                            <Button text="Details" />
+                            <Button text="Add to Cart" />
+                        </div>
                     </div>
                 </div>
             );

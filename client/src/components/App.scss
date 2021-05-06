@@ -28,6 +28,8 @@ a {
     color: inherit;
 }
 
+@import '../styles/css-variables.scss';
+
 .main-container {
     .wrapper {
         max-width: 80vw;

@@ -1,0 +1,14 @@
+button.site-button {
+    background-color: var(--main-site-color);
+    color: white;
+    border: 2px solid var(--main-site-color);
+    border-radius: 4px;
+    padding: 5px 1.5rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: white;
+        color: var(--main-site-color);
+        box-shadow: var(--site-box-shadow);
+    }
+}
