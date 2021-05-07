@@ -1,17 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchProducts } from '../../../state/product/productActions';
 import './ProductList.scss';
 import Button from '../../../components/Button';
 
-const ProductList = ({ products, fetchProducts }) => {
-    useEffect(() => {
-        fetchProducts();
-        console.log(products);
-        // eslint-disable-next-line
-    }, []);
-
-    const renderProducts = () => {
+const ProductList = ({ products }) => {
+     const renderProducts = () => {
         return products.map((item) => {
             return (
                 <div key={item.id} className="product-card mtb-2">
@@ -40,6 +33,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(
-    mapStateToProps,
-    { fetchProducts }
+    mapStateToProps
 )(ProductList);

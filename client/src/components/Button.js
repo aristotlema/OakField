@@ -9,7 +9,7 @@ const Button = ({ text, buttonType, item, addToCart }) => {
         return (
             <button 
                 className="site-button"
-                onClick={() => addToCart(item)}
+                onClick={() => addToCart(item.id)}
             >
                 {text}
             </button>
