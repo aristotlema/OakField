@@ -1,31 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import './ProductList.scss';
-import Button from '../../../components/Button';
+
+import ViewSelector from './ViewSelector';
+import CardList from './CardList';
+import Card from './Card';
 
 const ProductList = ({ products }) => {
-     const renderProducts = () => {
+    const [productView, setProductView] = useState('list');
+    
+    const selectedView = productView === 'grid' ? 'grid' : 'list'; 
+
+    const renderProducts = () => {
         return products.map((item) => {
-            return (
-                <div key={item.id} className="product-card mtb-2">
-                    <div className="product-card-image">
-                        <img src={item.imageURL} alt={item.name}/>
-                    </div>
-                    <div className="product-card-details">
-                        <h3 className="product-cart-title">{item.name}</h3>
-                        <div>${item.price}</div>
-                        <div className="product-card-description">{item.description}</div>
-                        <div className="product-card-buttons">
-                            <Button text="Details" />
-                            <Button text="Add to Cart" buttonType="addToCart" item={item}/>
-                        </div>
-                    </div>
-                </div>
-            );
+            if(productView === 'list') {
+                return <CardList item={item} key={item.id}/>
+            } 
+            else if (productView === 'grid') {
+                return <Card item={item} key={item.id}/>
+            } 
+            else {
+                console.error('you messed up');
+                return <CardList item={item} key={item.id}/>
+            }
         })
     };
 
-    return <section>{renderProducts()}</section>;
+    return (
+    <section>
+        <ViewSelector setProductView={setProductView}/>
+        <div className={`card-list-container ${selectedView}`}>
+            {renderProducts()}
+        </div>
+        
+    </section>);
 };
 
 const mapStateToProps = state => {
