@@ -12,7 +12,7 @@ const CardList = ({ item }) => {
                 <div>${item.price}</div>
                 <div className="product-card-description">{item.description}</div>
                 <div className="product-card-buttons">
-                    <Button text="Details" />
+                    <Button text="Details" buttonType="itemDetails" item={item}/>
                     <Button text="Add to Cart" buttonType="addToCart" item={item}/>
                 </div>
             </div>

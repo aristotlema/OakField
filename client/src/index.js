@@ -12,7 +12,7 @@ const reduxStore = createStore(store, composeWithDevTools(applyMiddleware(reduxT
 
 ReactDOM.render(
     <Provider store={reduxStore} >
-            <App />
+        <App />
     </Provider>,
     document.getElementById('root')
 );

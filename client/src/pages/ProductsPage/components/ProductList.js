@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import './ProductList.scss';
-
+import { fetchProducts } from '../../../state/product/productActions';
 import ViewSelector from './ViewSelector';
 import CardList from './CardList';
 import Card from './Card';
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, fetchProducts }) => {
     const [productView, setProductView] = useState('list');
+
+    useEffect(() => {
+        fetchProducts();
+        // eslint-disable-next-line
+    }, []);
+    
     
     const selectedView = productView === 'grid' ? 'grid' : 'list'; 
 
@@ -32,7 +38,6 @@ const ProductList = ({ products }) => {
         <div className={`card-list-container ${selectedView}`}>
             {renderProducts()}
         </div>
-        
     </section>);
 };
 
@@ -41,5 +46,6 @@ const mapStateToProps = state => {
 };
 
 export default connect(
-    mapStateToProps
+    mapStateToProps, 
+    { fetchProducts }
 )(ProductList);
