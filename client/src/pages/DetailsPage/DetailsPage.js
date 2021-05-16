@@ -8,7 +8,11 @@ const DetailsPage = ({ fetchProductDetails, match, product }) => {
         // eslint-disable-next-line
     }, []);
 
-    return <div>Products Details for: </div>;
+    if(!product) {
+        return <div>Loading ...</div>;
+    } else {
+        return <div>Products Details for: {product.name}</div>;
+    }
 };
 
 const mapStateToProps = (state, ownProps) => {

@@ -29,7 +29,7 @@ const ProductList = ({ products, fetchProducts }) => {
                 console.error('you messed up');
                 return <CardList item={item} key={item.id}/>
             }
-        })
+        });
     };
 
     return (
@@ -42,7 +42,7 @@ const ProductList = ({ products, fetchProducts }) => {
 };
 
 const mapStateToProps = state => {
-    return { products: state.products };
+    return { products: Object.values(state.products) };
 };
 
 export default connect(
