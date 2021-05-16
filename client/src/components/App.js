@@ -9,7 +9,7 @@ import HomePage from '../pages/HomePage/HomePage';
 import ProductsPage from '../pages/ProductsPage/ProductsPage';
 import AboutPage from '../pages/AboutPage/AboutPage';
 import CartPage from '../pages/CartPage/CartPage'
-import DetailsPage from '../pages/DetailsPage/DetailsPage';
+import ProductDetailsPage from '../pages/ProductDetailsPage/ProductDetailsPage';
 
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
                     <Route path="/products" exact component={ProductsPage} />
                     <Route path="/about" exact component={AboutPage} />
                     <Route path="/cart" exact component={CartPage} />
-                    <Route path="/products/:id" extact component={DetailsPage} />
+                    <Route path="/products/:id" extact component={ProductDetailsPage} />
                 </div>
             </Router>
         </div>

@@ -8,7 +8,7 @@ const CardList = ({ item }) => {
                 <img src={item.imageURL} alt={item.name}/>
             </div>
             <div className="product-card-details">
-                <h3 className="product-cart-title">{item.name}</h3>
+                <h3 className="product-card-title">{item.name}</h3>
                 <div>${item.price}</div>
                 <div className="product-card-description">{item.description}</div>
                 <div className="product-card-buttons">

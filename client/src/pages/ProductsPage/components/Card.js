@@ -8,10 +8,10 @@ const Card = ({ item }) => {
                 <img src={item.imageURL} alt={item.name}/>
             </div>
             <div className="product-card-details">
-                <h3 className="product-cart-title">{item.name}</h3>
+                <h3 className="product-card-title">{item.name}</h3>
                 <div>${item.price}</div>
                 <div className="product-card-buttons">
-                    <Button text="Details" />
+                    <Button text="Details" buttonType="itemDetails" item={item}/>
                     <Button text="Add to Cart" buttonType="addToCart" item={item}/>
                 </div>
             </div>
